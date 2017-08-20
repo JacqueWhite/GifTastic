@@ -1,0 +1,23 @@
+.container {
+	
+}
+
+#gifs-appear-here {
+	clear: ;
+
+}
+
+img {
+	height: 150px;
+	float: left;
+	margin: 5px;
+}
+
+p {
+	text-align: relative;
+}
+
+
+.clearfix {
+	display: inline-block;
+}
