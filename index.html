@@ -16,18 +16,15 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3">Giftastic!</h1>
-    <p class="lead">These are GIFs related to The Walking Dead.</p>
+    <h1 class="display-3">GifTastic!</h1>
+    <p class="lead">GIFs related to The Walking Dead.</p>
   </div>
 </div>
 
 	<div class="row">
 	<!-- buttons up top -->
-		<div class="col-sm-12">
-			<button data-subject="Rick Grimes">Rick</button>
-			<button data-subject="The Walking Dead">TWD</button>
-			<button data-subject="Carl Grimes">CORALL</button>
-			<button data-subject="Carol">Want some cookies?</button>
+		<div class="col-sm-12" id="buttons-view">
+
 		</div>
 	</div>
 
@@ -39,11 +36,11 @@
 		<!-- add a new subject button -->
 		<div class="col-sm-3">
 		<form>
-		  <div class="form-group">
-		    <label for="formGroupExampleInput">Add a new Button!</label>
-		    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex: zombies">
+		  <div class="form-group" id="addGit">
+		    <label for="addInput">Add a new Button!</label>
+		    <input type="text" class="form-control" id="addInput" placeholder="ex: zombies">
 		  </div>
-		<button id="add-new-button">Submit</button>
+		<button type="submit" id="add-new-button">Submit</button>
 		</form>
 
 		</div>

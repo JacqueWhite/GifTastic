@@ -1,3 +1,27 @@
+var gifList = ["negan", "daryl dixon", "glenn rhee", "carl grimes", "walkers", "rick grimes", "carol peletier", "the walking dead", "maggie rhee"];
+
+
+	function renderButtons() {
+    $("#buttons-view").empty();
+    for (var i = 0; i < gifList.length; i++) {
+        var a = $("<button>");
+        a.addClass("className");
+        a.attr("data-subject", gifList[i]);
+        a.text(gifList[i]);
+        $("#buttons-view").append(a);
+    };
+};
+
+renderButtons();
+
+$("#addInput").on("click", function(event) {
+	event.preventDefault();
+	var input = $("#addInput").val().trim();
+	gifList.push(input);
+	renderButtons();
+});
+
+
 // event listener for all button elements
 $("button").on("click", function() {
 	var subject = $(this).attr("data-subject");
@@ -37,6 +61,10 @@ $("button").on("click", function() {
 
 			// giving the image tag a src attribute of a property pulled off the result item
 			subjectImage.attr("src", results[i].images.fixed_height.url);
+			subjectImage.attr("data-animate", results[i].images.fixed_height.url);
+			subjectImage.attr("data-still", response.data[i].images.fixed_height_still.url);
+			subjectImage.attr("data-state", "still");
+			subjectImage.attr("class", "gif");
 
 			// appending the paragraph and subjectImage created to the gifDiv created
 			gifDiv.append(p);
@@ -44,10 +72,22 @@ $("button").on("click", function() {
 
 			// prepending the gifDiv to the gifs-appear-here div in html
 			$("#gifs-appear-here").prepend(gifDiv);
-		}
 
-			$("item").append('<img class="item" src="' + response.data[i].images.fixed_height_still.url + '">');
+			// allowing the gifs to be still or playing
+			$(".gif").on("click", function() {
+				var state = $(this).attr("data-state");
+
+				if (state == "still") {
+					$(this).attr("src", $(this).attr("data-animate"));
+					$(this).attr("data-state", "animate");
+				} else {
+					$(this).attr("src", $(this).attr("data-still"));
+					$(this).attr("data-state", "still");
+				}
+			});
+		}
 	  }
+
 	 });
 
 
