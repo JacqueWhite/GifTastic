@@ -35,7 +35,7 @@ $("button").on("click", function() {
 	var subject = $(this).attr("data-subject");
 
 // make the URL
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + subject + "&api_key=dc6zaTOxFJmzC&limit=10";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + subject + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 // AJAX request
 
