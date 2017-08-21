@@ -14,12 +14,20 @@ var gifList = ["negan", "daryl dixon", "glenn rhee", "carl grimes", "walkers", "
 
 renderButtons();
 
-$("#addInput").on("click", function(event) {
-	event.preventDefault();
-	var input = $("#addInput").val().trim();
-	gifList.push(input);
+
+function sendInput() {
+	var newGif = $("#addInput").val();
+	// console.log(newGif);
+	gifList.push(newGif);
 	renderButtons();
-});
+}
+
+// $("#add-new-button").on("click", function(event) {
+// 	event.preventDefault();
+// 	var input = $("#addInput").text().val().submit();
+// 	gifList.push(input);
+// 	renderButtons();
+// });
 
 
 // event listener for all button elements
